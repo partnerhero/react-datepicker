@@ -46124,10 +46124,16 @@
       }
 
       function isDayInRange(day, startDate, endDate) {
-        return (0, _isWithinInterval2.default)(day, {
-          start: startDate,
-          end: endDate
-        });
+        var valid = void 0;
+        try {
+          valid = (0, _isWithinInterval2.default)(day, {
+            start: startDate,
+            end: endDate
+          });
+        } catch (err) {
+          valid = false;
+        }
+        return valid;
       }
 
       // *** Diffing ***
@@ -46158,7 +46164,7 @@
       }
 
       function getFormattedWeekdayInLocale(date, formatFunc, locale) {
-        return formatFunc(formatDate(date, "dddd", locale));
+        return formatFunc(formatDate(date, "EEEE", locale));
       }
 
       function getWeekdayMinInLocale(date, locale) {
@@ -46264,10 +46270,17 @@
           (0, _setMinutes2.default)(base, (0, _getMinutes2.default)(maxTime)),
           (0, _getHours2.default)(maxTime)
         );
-        return !(0, _isWithinInterval2.default)(baseTime, {
-          start: min,
-          end: max
-        });
+
+        var valid = void 0;
+        try {
+          valid = !(0, _isWithinInterval2.default)(baseTime, {
+            start: min,
+            end: max
+          });
+        } catch (err) {
+          valid = false;
+        }
+        return valid;
       }
 
       function monthDisabledBefore(day) {
@@ -62934,6 +62947,12 @@
               _react2.default.createElement(
                 "code",
                 { className: "jsx" },
+                "// Note: Make sure to npm install the right version of date-fns as",
+                _react2.default.createElement("br", null),
+                "// specified in packaged.json. The default one may not be compatiable",
+                _react2.default.createElement("br", null),
+                "// npm install --save date-fns@version",
+                _react2.default.createElement("br", null),
                 "import enGB from 'date-fns/locale/en-GB';",
                 _react2.default.createElement("br", null),
                 "registerLocale('en-GB', enGB);",
