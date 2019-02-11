@@ -99,6 +99,7 @@
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
+  "bundleDependencies": false,
   "dependencies": {
     "classnames": "^2.2.5",
     "date-fns": "^2.0.0-alpha.23",
