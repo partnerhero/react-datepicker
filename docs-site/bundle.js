@@ -43758,13 +43758,18 @@
             var className = (0, _classnames3.default)(
               _this.props.className,
               ((_classnames = {}),
-              (_classnames[inputBoxClassName] = _this.state.open),
+              (_classnames[inputBoxClassName] = _this.state),
               _classnames)
             );
 
             var customInput =
               _this.props.customInput ||
-              _react2.default.createElement("input", { type: "text" });
+              _react2.default.createElement("input", {
+                type: "text",
+                onKeyPress: function onKeyPress(event) {
+                  event.preventDefault();
+                }
+              });
             var customInputRef = _this.props.customInputRef || "ref";
             var inputValue =
               typeof _this.props.value === "string"

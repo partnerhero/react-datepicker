@@ -1074,7 +1074,7 @@
         return t.time({ width: "full" });
     }
   }
-  var V = {
+  var K = {
     p: G,
     P: function(e, t) {
       var n,
@@ -1099,7 +1099,7 @@
       return n.replace("{{date}}", A(a, t)).replace("{{time}}", G(o, t));
     }
   };
-  function K(e, t) {
+  function V(e, t) {
     if (arguments.length < 2)
       throw new TypeError(
         "2 arguments required, but only " + arguments.length + " present"
@@ -1113,7 +1113,7 @@
       throw new TypeError(
         "2 arguments required, but only " + arguments.length + " present"
       );
-    return K(e, -O(t));
+    return V(e, -O(t));
   }
   var J = ["D", "DD", "YY", "YYYY"];
   function Z(e) {
@@ -1167,7 +1167,7 @@
       .match(te)
       .map(function(e) {
         var t = e[0];
-        return "p" !== t && "P" !== t ? e : (0, V[t])(e, o.formatLong, f);
+        return "p" !== t && "P" !== t ? e : (0, K[t])(e, o.formatLong, f);
       })
       .join("")
       .match(ee)
@@ -1188,7 +1188,7 @@
       throw new TypeError(
         "2 arguments required, but only " + arguments.length + " present"
       );
-    return K(e, O(t) * oe);
+    return V(e, O(t) * oe);
   }
   var se = 36e5;
   function ue(e, t) {
@@ -1196,7 +1196,7 @@
       throw new TypeError(
         "2 arguments required, but only " + arguments.length + " present"
       );
-    return K(e, O(t) * se);
+    return V(e, O(t) * se);
   }
   function ce(e, t) {
     if (arguments.length < 2)
@@ -1495,8 +1495,8 @@
     Xe = /^(1[0-1]|0?\d)/,
     Ae = /^(1[0-2]|0?\d)/,
     Ge = /^[0-5]?\d/,
-    Ve = /^[0-5]?\d/,
-    Ke = /^\d/,
+    Ke = /^[0-5]?\d/,
+    Ve = /^\d/,
     ze = /^\d{1,2}/,
     Je = /^\d{1,3}/,
     Ze = /^\d{1,4}/,
@@ -1537,7 +1537,7 @@
   function dt(e, t, n) {
     switch (e) {
       case 1:
-        return ct(Ke, t, n);
+        return ct(Ve, t, n);
       case 2:
         return ct(ze, t, n);
       case 3:
@@ -2379,7 +2379,7 @@
         parse: function(e, t, n, r) {
           switch (t) {
             case "s":
-              return ct(Ve, e);
+              return ct(Ke, e);
             case "so":
               return n.ordinalNumber(e, { unit: "second" });
             default:
@@ -2831,12 +2831,12 @@
       r = t.maxDate;
     return (n && Oe(e, n) < 0) || (r && 0 < Oe(e, r));
   }
-  function Vt(e, t) {
+  function Kt(e, t) {
     for (var n = t.length, r = 0; r < n; r++)
       if (ge(t[r]) === ge(e) && me(t[r]) === me(e)) return !0;
     return !1;
   }
-  function Kt(e, t) {
+  function Vt(e, t) {
     var n = t.minTime,
       r = t.maxTime;
     if (!n || !r) throw Error("Both minTime and maxTime props required");
@@ -4057,9 +4057,9 @@
           this,
           a.call.apply(a, [this].concat(n))
         )).handleClick = function(e) {
-          ((d.props.minTime || d.props.maxTime) && Kt(e, d.props)) ||
-            (d.props.excludeTimes && Vt(e, d.props.excludeTimes)) ||
-            (d.props.includeTimes && !Vt(e, d.props.includeTimes)) ||
+          ((d.props.minTime || d.props.maxTime) && Vt(e, d.props)) ||
+            (d.props.excludeTimes && Kt(e, d.props.excludeTimes)) ||
+            (d.props.includeTimes && !Kt(e, d.props.includeTimes)) ||
             d.props.onChange(e);
         }),
         (d.liClasses = function(e, t, n) {
@@ -4068,9 +4068,9 @@
             t === ge(e) &&
               n === me(e) &&
               r.push("react-datepicker__time-list-item--selected"),
-            (((d.props.minTime || d.props.maxTime) && Kt(e, d.props)) ||
-              (d.props.excludeTimes && Vt(e, d.props.excludeTimes)) ||
-              (d.props.includeTimes && !Vt(e, d.props.includeTimes))) &&
+            (((d.props.minTime || d.props.maxTime) && Vt(e, d.props)) ||
+              (d.props.excludeTimes && Kt(e, d.props.excludeTimes)) ||
+              (d.props.includeTimes && !Kt(e, d.props.includeTimes))) &&
               r.push("react-datepicker__time-list-item--disabled"),
             d.props.injectTimes &&
               (60 * ge(e) + me(e)) % d.props.intervals != 0 &&
@@ -5229,10 +5229,15 @@
               r,
               a,
               o,
-              i = p(l.props.className, (((e = {})[Cn] = l.state.open), e)),
+              i = p(l.props.className, (((e = {})[Cn] = l.state), e)),
               s =
                 l.props.customInput ||
-                h.createElement("input", { type: "text" }),
+                h.createElement("input", {
+                  type: "text",
+                  onKeyPress: function(e) {
+                    e.preventDefault();
+                  }
+                }),
               u = l.props.customInputRef || "ref",
               c =
                 "string" == typeof l.props.value

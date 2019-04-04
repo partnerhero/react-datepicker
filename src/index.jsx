@@ -677,10 +677,17 @@ export default class DatePicker extends React.Component {
 
   renderDateInput = () => {
     const className = classnames(this.props.className, {
-      [inputBoxClassName]: this.state.open
+      [inputBoxClassName]: this.state
     });
 
-    const customInput = this.props.customInput || <input type="text" />;
+    const customInput = this.props.customInput || (
+      <input
+        type="text"
+        onKeyPress={event => {
+          event.preventDefault();
+        }}
+      />
+    );
     const customInputRef = this.props.customInputRef || "ref";
     const inputValue =
       typeof this.props.value === "string"
