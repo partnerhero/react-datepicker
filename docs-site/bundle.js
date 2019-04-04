@@ -43182,7 +43182,7 @@
       exports.setDefaultLocale = _date_utils.setDefaultLocale;
       exports.getDefaultLocale = _date_utils.getDefaultLocale;
 
-      var outsideClickIgnoreClass = "react-datepicker-ignore-onclickoutside";
+      var inputBoxClassName = "btn btn-sm btn-outline-secondary ml-2";
       var WrappedCalendar = (0, _reactOnclickoutside2.default)(
         _calendar2.default
       );
@@ -43720,7 +43720,7 @@
                   _this.props.scrollableMonthYearDropdown,
                 todayButton: _this.props.todayButton,
                 weekLabel: _this.props.weekLabel,
-                outsideClickIgnoreClass: outsideClickIgnoreClass,
+                inputBoxClassName: inputBoxClassName,
                 fixedHeight: _this.props.fixedHeight,
                 monthsShown: _this.props.monthsShown,
                 monthSelectedIn: _this.state.monthSelectedIn,
@@ -43758,7 +43758,7 @@
             var className = (0, _classnames3.default)(
               _this.props.className,
               ((_classnames = {}),
-              (_classnames[outsideClickIgnoreClass] = _this.state.open),
+              (_classnames[inputBoxClassName] = _this.state.open),
               _classnames)
             );
 

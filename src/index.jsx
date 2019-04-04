@@ -42,7 +42,7 @@ export { default as CalendarContainer } from "./calendar_container";
 
 export { registerLocale, setDefaultLocale, getDefaultLocale };
 
-const outsideClickIgnoreClass = "react-datepicker-ignore-onclickoutside";
+const inputBoxClassName = "btn btn-sm btn-outline-secondary ml-2";
 const WrappedCalendar = onClickOutside(Calendar);
 
 // Compares dates year+month combinations
@@ -243,10 +243,10 @@ export default class DatePicker extends React.Component {
     this.props.openToDate
       ? this.props.openToDate
       : this.props.selectsEnd && this.props.startDate
-        ? this.props.startDate
-        : this.props.selectsStart && this.props.endDate
-          ? this.props.endDate
-          : newDate();
+      ? this.props.startDate
+      : this.props.selectsStart && this.props.endDate
+      ? this.props.endDate
+      : newDate();
 
   calcInitialState = () => {
     const defaultPreSelection = this.getPreSelection();
@@ -256,8 +256,8 @@ export default class DatePicker extends React.Component {
       minDate && isBefore(defaultPreSelection, minDate)
         ? minDate
         : maxDate && isAfter(defaultPreSelection, maxDate)
-          ? maxDate
-          : defaultPreSelection;
+        ? maxDate
+        : defaultPreSelection;
     return {
       open: this.props.startOpen || false,
       preventFocus: false,
@@ -643,7 +643,7 @@ export default class DatePicker extends React.Component {
         scrollableMonthYearDropdown={this.props.scrollableMonthYearDropdown}
         todayButton={this.props.todayButton}
         weekLabel={this.props.weekLabel}
-        outsideClickIgnoreClass={outsideClickIgnoreClass}
+        inputBoxClassName={inputBoxClassName}
         fixedHeight={this.props.fixedHeight}
         monthsShown={this.props.monthsShown}
         monthSelectedIn={this.state.monthSelectedIn}
@@ -677,7 +677,7 @@ export default class DatePicker extends React.Component {
 
   renderDateInput = () => {
     const className = classnames(this.props.className, {
-      [outsideClickIgnoreClass]: this.state.open
+      [inputBoxClassName]: this.state.open
     });
 
     const customInput = this.props.customInput || <input type="text" />;
@@ -686,8 +686,8 @@ export default class DatePicker extends React.Component {
       typeof this.props.value === "string"
         ? this.props.value
         : typeof this.state.inputValue === "string"
-          ? this.state.inputValue
-          : safeDateFormat(this.props.selected, this.props);
+        ? this.state.inputValue
+        : safeDateFormat(this.props.selected, this.props);
 
     return React.cloneElement(customInput, {
       [customInputRef]: input => {

@@ -74,7 +74,7 @@
     (p = p && p.hasOwnProperty("default") ? p.default : p),
     (n = n && n.hasOwnProperty("default") ? n.default : n);
   var a = 6e4;
-  function _(e) {
+  function N(e) {
     var t = new Date(e.getTime()),
       n = t.getTimezoneOffset();
     t.setSeconds(0, 0);
@@ -194,7 +194,7 @@
     };
   }
   var d,
-    N = {
+    _ = {
       formatDistance: function(e, t, n) {
         var r;
         return (
@@ -1137,7 +1137,7 @@
       );
     var r = t + "",
       a = n || {},
-      o = a.locale || N,
+      o = a.locale || _,
       i = o.options && o.options.firstWeekContainsDate,
       s = null == i ? 1 : O(i),
       u = null == a.firstWeekContainsDate ? s : O(a.firstWeekContainsDate);
@@ -1156,7 +1156,7 @@
       throw new RangeError("locale must contain formatLong property");
     var d = E(e);
     if (!g(d)) throw new RangeError("Invalid time value");
-    var h = z(d, _(d)),
+    var h = z(d, N(d)),
       f = {
         firstWeekContainsDate: u,
         weekStartsOn: p,
@@ -1389,11 +1389,11 @@
       );
     var n = xe(e),
       r = xe(t),
-      a = n.getTime() - _(n),
-      o = r.getTime() - _(r);
+      a = n.getTime() - N(n),
+      o = r.getTime() - N(r);
     return Math.round((a - o) / Ee);
   }
-  function _e(e, t) {
+  function Ne(e, t) {
     if (arguments.length < 2)
       throw new TypeError(
         "2 arguments required, but only " + arguments.length + " present"
@@ -1404,7 +1404,7 @@
       12 * (n.getFullYear() - r.getFullYear()) + (n.getMonth() - r.getMonth())
     );
   }
-  function Ne(e, t) {
+  function _e(e, t) {
     if (arguments.length < 1)
       throw new TypeError(
         "1 argument required, but only " + arguments.length + " present"
@@ -2478,7 +2478,7 @@
     var a = e + "",
       o = t + "",
       i = r || {},
-      s = i.locale || N;
+      s = i.locale || _;
     if (!s.match) throw new RangeError("locale must contain match property");
     var u = s.options && s.options.firstWeekContainsDate,
       c = null == u ? 1 : O(u),
@@ -2547,7 +2547,7 @@
         }),
       k = E(n);
     if (isNaN(k)) return new Date(NaN);
-    var T = z(k, _(k)),
+    var T = z(k, N(k)),
       M = {};
     for (f = 0; f < C.length; f++) {
       var S = C[f];
@@ -2602,7 +2602,7 @@
         return t && r(e.prototype, t), n && r(e, n), e;
       };
     })(),
-    _t =
+    Nt =
       Object.assign ||
       function(e) {
         for (var t = 1; t < arguments.length; t++) {
@@ -2612,7 +2612,7 @@
         }
         return e;
       },
-    Nt = function(e, t) {
+    _t = function(e, t) {
       if ("function" != typeof t && null !== t)
         throw new TypeError(
           "Super expression must either be null or a function, not " + typeof t
@@ -2716,10 +2716,10 @@
             throw new TypeError(
               "2 arguments required, but only " + arguments.length + " present"
             );
-          var r = Ne(e, n),
-            a = Ne(t, n),
-            o = r.getTime() - _(r),
-            i = a.getTime() - _(a);
+          var r = _e(e, n),
+            a = _e(t, n),
+            o = r.getTime() - N(r),
+            i = a.getTime() - N(a);
           return Math.round((o - i) / qe);
         })(
           e,
@@ -2738,7 +2738,7 @@
       : 1;
   }
   function It(e, t) {
-    return Ne(e, { locale: Xt(t || Qt()) });
+    return _e(e, { locale: Xt(t || Qt()) });
   }
   function Lt(e) {
     return (function(e) {
@@ -2858,10 +2858,10 @@
       r = t.includeDates,
       a = fe(e, 1);
     return (
-      (n && 0 < _e(n, a)) ||
+      (n && 0 < Ne(n, a)) ||
       (r &&
         r.every(function(e) {
-          return 0 < _e(e, a);
+          return 0 < Ne(e, a);
         })) ||
       !1
     );
@@ -2872,10 +2872,10 @@
       r = t.includeDates,
       a = de(e, 1);
     return (
-      (n && 0 < _e(a, n)) ||
+      (n && 0 < Ne(a, n)) ||
       (r &&
         r.every(function(e) {
-          return 0 < _e(a, e);
+          return 0 < Ne(a, e);
         })) ||
       !1
     );
@@ -3057,7 +3057,7 @@
       );
     }
     return (
-      Nt(n, t),
+      _t(n, t),
       (n.prototype.render = function() {
         var e = p({
           "react-datepicker__year-dropdown": !0,
@@ -3181,7 +3181,7 @@
         );
       }
       return (
-        Nt(i, o),
+        _t(i, o),
         (i.prototype.render = function() {
           var e = void 0;
           switch (this.props.dropdownMode) {
@@ -3261,7 +3261,7 @@
       );
     }
     return (
-      Nt(i, o),
+      _t(i, o),
       (i.prototype.render = function() {
         return h.createElement(
           "div",
@@ -3353,7 +3353,7 @@
         );
       }
       return (
-        Nt(i, o),
+        _t(i, o),
         (i.prototype.render = function() {
           var r = this,
             e = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].map(
@@ -3446,7 +3446,7 @@
       );
     }
     return (
-      Nt(n, t),
+      _t(n, t),
       (n.prototype.render = function() {
         var e = p({
           "react-datepicker__month-year-dropdown": !0,
@@ -3565,7 +3565,7 @@
         );
       }
       return (
-        Nt(i, o),
+        _t(i, o),
         (i.prototype.render = function() {
           var e = void 0;
           switch (this.props.dropdownMode) {
@@ -3719,7 +3719,7 @@
       );
     }
     return (
-      Nt(o, a),
+      _t(o, a),
       (o.prototype.render = function() {
         return h.createElement(
           "div",
@@ -3773,7 +3773,7 @@
       );
     }
     return (
-      Nt(i, o),
+      _t(i, o),
       (i.prototype.render = function() {
         return h.createElement(
           "div",
@@ -3862,7 +3862,7 @@
       );
     }
     return (
-      Nt(i, o),
+      _t(i, o),
       (i.prototype.render = function() {
         return h.createElement(
           "div",
@@ -3998,7 +3998,7 @@
       );
     }
     return (
-      Nt(o, a),
+      _t(o, a),
       (o.prototype.render = function() {
         return h.createElement(
           "div",
@@ -4124,7 +4124,7 @@
       );
     }
     return (
-      Nt(o, a),
+      _t(o, a),
       (o.prototype.componentDidMount = function() {
         this.list.scrollTop = o.calcCenterPosition(
           this.props.monthRef
@@ -4210,7 +4210,7 @@
       { className: e.className },
       h.createElement(
         "div",
-        _t({ className: "react-datepicker__triangle" }, void 0 === n ? {} : n)
+        Nt({ className: "react-datepicker__triangle" }, void 0 === n ? {} : n)
       ),
       t
     );
@@ -4542,7 +4542,7 @@
                 onFocus: u.props.onDropdownFocus
               },
               u.props.renderCustomHeader(
-                _t({}, u.state, {
+                Nt({}, u.state, {
                   changeMonth: u.changeMonth,
                   changeYear: u.changeYear,
                   decreaseMonth: u.decreaseMonth,
@@ -4647,7 +4647,7 @@
         );
       }
       return (
-        Nt(n, t),
+        _t(n, t),
         Ot(n, null, [
           {
             key: "defaultProps",
@@ -4772,7 +4772,7 @@
         return Et(this, t), qt(this, e.apply(this, arguments));
       }
       return (
-        Nt(t, e),
+        _t(t, e),
         (t.prototype.render = function() {
           var e = this.props,
             n = e.popperComponent,
@@ -4785,12 +4785,12 @@
             var s = p("react-datepicker-popper", e.className);
             i = h.createElement(
               u.Popper,
-              _t({ modifiers: t, placement: r }, a),
+              Nt({ modifiers: t, placement: r }, a),
               function(e) {
                 var t = e.arrowProps;
                 return h.createElement(
                   "div",
-                  _t(
+                  Nt(
                     { ref: e.ref, style: e.style },
                     { className: s, "data-placement": e.placement }
                   ),
@@ -4848,7 +4848,7 @@
     popperProps: t.object,
     targetComponent: t.element
   };
-  var Cn = "react-datepicker-ignore-onclickoutside",
+  var Cn = "btn btn-sm btn-outline-secondary ml-2",
     kn = n(vn);
   var Tn = "Date input not valid.",
     Mn = (function(t) {
@@ -5190,7 +5190,7 @@
                       l.props.scrollableMonthYearDropdown,
                     todayButton: l.props.todayButton,
                     weekLabel: l.props.weekLabel,
-                    outsideClickIgnoreClass: Cn,
+                    inputBoxClassName: Cn,
                     fixedHeight: l.props.fixedHeight,
                     monthsShown: l.props.monthsShown,
                     monthSelectedIn: l.state.monthSelectedIn,
@@ -5285,7 +5285,7 @@
         );
       }
       return (
-        Nt(n, t),
+        _t(n, t),
         Ot(n, null, [
           {
             key: "defaultProps",
