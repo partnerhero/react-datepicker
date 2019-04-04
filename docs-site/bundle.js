@@ -57679,7 +57679,7 @@
 
           return _react2.default.createElement(
             _reactPopper.Manager,
-            null,
+            { id: "datePicker-container" },
             _react2.default.createElement(
               _reactPopper.Reference,
               null,

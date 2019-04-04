@@ -4804,7 +4804,7 @@
               (i = h.createElement(this.props.popperContainer, {}, i)),
             h.createElement(
               u.Manager,
-              null,
+              { id: "datePicker-container" },
               h.createElement(u.Reference, null, function(e) {
                 return h.createElement(
                   "div",

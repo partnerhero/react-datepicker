@@ -71,7 +71,7 @@ export default class PopperComponent extends React.Component {
     }
 
     return (
-      <Manager>
+      <Manager id="datePicker-container">
         <Reference>
           {({ ref }) => (
             <div ref={ref} className="react-datepicker-wrapper">
