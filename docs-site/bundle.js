@@ -43182,7 +43182,8 @@
       exports.setDefaultLocale = _date_utils.setDefaultLocale;
       exports.getDefaultLocale = _date_utils.getDefaultLocale;
 
-      var inputBoxClassName = "btn btn-sm btn-outline-secondary ml-2";
+      var inputBoxClassName =
+        "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary ml-2";
       var WrappedCalendar = (0, _reactOnclickoutside2.default)(
         _calendar2.default
       );
