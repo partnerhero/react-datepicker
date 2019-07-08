@@ -43769,7 +43769,8 @@
                 type: "text",
                 onKeyPress: function onKeyPress(event) {
                   event.preventDefault();
-                }
+                },
+                disabled: true
               });
             var customInputRef = _this.props.customInputRef || "ref";
             var inputValue =

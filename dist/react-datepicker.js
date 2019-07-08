@@ -5236,7 +5236,8 @@
                   type: "text",
                   onKeyPress: function(e) {
                     e.preventDefault();
-                  }
+                  },
+                  disabled: !0
                 }),
               u = l.props.customInputRef || "ref",
               c =

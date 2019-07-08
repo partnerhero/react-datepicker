@@ -687,6 +687,7 @@ export default class DatePicker extends React.Component {
         onKeyPress={event => {
           event.preventDefault();
         }}
+        disabled
       />
     );
     const customInputRef = this.props.customInputRef || "ref";
