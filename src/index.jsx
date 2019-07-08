@@ -43,7 +43,7 @@ export { default as CalendarContainer } from "./calendar_container";
 export { registerLocale, setDefaultLocale, getDefaultLocale };
 
 const inputBoxClassName =
-  "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary ml-2";
+  "MuiButtonBase-root MuiButton-root MuiButton-contained ml-2";
 const WrappedCalendar = onClickOutside(Calendar);
 
 // Compares dates year+month combinations

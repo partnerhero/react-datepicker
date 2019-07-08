@@ -43183,7 +43183,7 @@
       exports.getDefaultLocale = _date_utils.getDefaultLocale;
 
       var inputBoxClassName =
-        "MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary ml-2";
+        "MuiButtonBase-root MuiButton-root MuiButton-contained ml-2";
       var WrappedCalendar = (0, _reactOnclickoutside2.default)(
         _calendar2.default
       );
