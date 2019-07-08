@@ -13,7 +13,7 @@ class CustomInput extends React.Component {
   render() {
     let { ...props } = this.props;
     delete props.onChangeArgs;
-    return <input {...props} onChange={this.onChange.bind(this)} />;
+    return <input {...props} onChange={this.onChange.bind(this)} disabled />;
   }
 }
 
