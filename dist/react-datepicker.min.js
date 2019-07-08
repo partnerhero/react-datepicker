@@ -25,7 +25,7 @@
         e.onClickOutside,
         e.ReactPopper
       );
-})(this, function(e, h, t, p, n, u) {
+})(this, function(e, h, t, l, n, u) {
   "use strict";
   function m(e) {
     if (arguments.length < 1)
@@ -71,7 +71,7 @@
   }
   (h = h && h.hasOwnProperty("default") ? h.default : h),
     (t = t && t.hasOwnProperty("default") ? t.default : t),
-    (p = p && p.hasOwnProperty("default") ? p.default : p),
+    (l = l && l.hasOwnProperty("default") ? l.default : l),
     (n = n && n.hasOwnProperty("default") ? n.default : n);
   var a = 6e4;
   function N(e) {
@@ -162,7 +162,7 @@
           ])[a.argumentCallback ? a.argumentCallback(e) : e];
     };
   }
-  function l(c) {
+  function p(c) {
     return function(e, t) {
       var n = e + "",
         r = t || {},
@@ -401,7 +401,7 @@
             rest: n.slice(o.length)
           };
         }),
-        era: l({
+        era: p({
           matchPatterns: {
             narrow: /^(b|a)/i,
             abbreviated: /^(b\.?\s?c\.?|b\.?\s?c\.?\s?e\.?|a\.?\s?d\.?|c\.?\s?e\.?)/i,
@@ -411,7 +411,7 @@
           parsePatterns: { any: [/^b/i, /^(a|c)/i] },
           defaultParseWidth: "any"
         }),
-        quarter: l({
+        quarter: p({
           matchPatterns: {
             narrow: /^[1234]/i,
             abbreviated: /^q[1234]/i,
@@ -424,7 +424,7 @@
             return e + 1;
           }
         }),
-        month: l({
+        month: p({
           matchPatterns: {
             narrow: /^[jfmasond]/i,
             abbreviated: /^(jan|feb|mar|apr|may|jun|jul|aug|sep|oct|nov|dec)/i,
@@ -463,7 +463,7 @@
           },
           defaultParseWidth: "any"
         }),
-        day: l({
+        day: p({
           matchPatterns: {
             narrow: /^[smtwf]/i,
             short: /^(su|mo|tu|we|th|fr|sa)/i,
@@ -477,7 +477,7 @@
           },
           defaultParseWidth: "any"
         }),
-        dayPeriod: l({
+        dayPeriod: p({
           matchPatterns: {
             narrow: /^(a|p|mi|n|(in the|at) (morning|afternoon|evening|night))/i,
             any: /^([ap]\.?\s?m\.?|midnight|noon|(in the|at) (morning|afternoon|evening|night))/i
@@ -3059,7 +3059,7 @@
     return (
       _t(n, t),
       (n.prototype.render = function() {
-        var e = p({
+        var e = l({
           "react-datepicker__year-dropdown": !0,
           "react-datepicker__year-dropdown--scrollable": this.props
             .scrollableYearDropdown
@@ -3448,7 +3448,7 @@
     return (
       _t(n, t),
       (n.prototype.render = function() {
-        var e = p({
+        var e = l({
           "react-datepicker__month-year-dropdown": !0,
           "react-datepicker__month-year-dropdown--scrollable": this.props
             .scrollableMonthYearDropdown
@@ -3694,7 +3694,7 @@
         (s.getClassNames = function(e) {
           var t,
             n = s.props.dayClassName ? s.props.dayClassName(e) : void 0;
-          return p(
+          return l(
             "react-datepicker__day",
             n,
             "react-datepicker__day--" + Ut(s.props.day, "ddd", t),
@@ -3778,7 +3778,7 @@
         return h.createElement(
           "div",
           {
-            className: p({
+            className: l({
               "react-datepicker__week-number": !0,
               "react-datepicker__week-number--clickable": !!this.props.onClick
             }),
@@ -3989,7 +3989,7 @@
         }),
         (s.getClassNames = function() {
           var e = s.props;
-          return p("react-datepicker__month", {
+          return l("react-datepicker__month", {
             "react-datepicker__month--selecting-range":
               e.selectingDate && (e.selectsStart || e.selectsEnd)
           });
@@ -4683,7 +4683,7 @@
           return h.createElement(
             this.props.container || wn,
             {
-              className: p("react-datepicker", this.props.className, {
+              className: l("react-datepicker", this.props.className, {
                 "react-datepicker--time-only": this.props.showTimeSelectOnly
               })
             },
@@ -4782,7 +4782,7 @@
             o = e.targetComponent,
             i = void 0;
           if (!e.hidePopper) {
-            var s = p("react-datepicker-popper", e.className);
+            var s = l("react-datepicker-popper", e.className);
             i = h.createElement(
               u.Popper,
               Nt({ modifiers: t, placement: r }, a),
@@ -4854,112 +4854,112 @@
     Mn = (function(t) {
       function n(e) {
         Et(this, n);
-        var l = qt(this, t.call(this, e));
+        var c = qt(this, t.call(this, e));
         return (
-          (l.getPreSelection = function() {
-            return l.props.openToDate
-              ? l.props.openToDate
-              : l.props.selectsEnd && l.props.startDate
-              ? l.props.startDate
-              : l.props.selectsStart && l.props.endDate
-              ? l.props.endDate
+          (c.getPreSelection = function() {
+            return c.props.openToDate
+              ? c.props.openToDate
+              : c.props.selectsEnd && c.props.startDate
+              ? c.props.startDate
+              : c.props.selectsStart && c.props.endDate
+              ? c.props.endDate
               : Pt();
           }),
-          (l.calcInitialState = function() {
-            var e = l.getPreSelection(),
-              t = Zt(l.props),
-              n = $t(l.props),
+          (c.calcInitialState = function() {
+            var e = c.getPreSelection(),
+              t = Zt(c.props),
+              n = $t(c.props),
               r = t && Ue(e, t) ? t : n && Ye(e, n) ? n : e;
             return {
-              open: l.props.startOpen || !1,
+              open: c.props.startOpen || !1,
               preventFocus: !1,
-              preSelection: l.props.selected ? l.props.selected : r,
-              highlightDates: en(l.props.highlightDates),
+              preSelection: c.props.selected ? c.props.selected : r,
+              highlightDates: en(c.props.highlightDates),
               focused: !1
             };
           }),
-          (l.clearPreventFocusTimeout = function() {
-            l.preventFocusTimeout && clearTimeout(l.preventFocusTimeout);
+          (c.clearPreventFocusTimeout = function() {
+            c.preventFocusTimeout && clearTimeout(c.preventFocusTimeout);
           }),
-          (l.setFocus = function() {
-            l.input && l.input.focus && l.input.focus();
+          (c.setFocus = function() {
+            c.input && c.input.focus && c.input.focus();
           }),
-          (l.setBlur = function() {
-            l.input && l.input.blur && l.input.blur(), l.cancelFocusInput();
+          (c.setBlur = function() {
+            c.input && c.input.blur && c.input.blur(), c.cancelFocusInput();
           }),
-          (l.setOpen = function(e) {
+          (c.setOpen = function(e) {
             var t =
               1 < arguments.length && void 0 !== arguments[1] && arguments[1];
-            l.setState(
+            c.setState(
               {
                 open: e,
                 preSelection:
-                  e && l.state.open
-                    ? l.state.preSelection
-                    : l.calcInitialState().preSelection,
+                  e && c.state.open
+                    ? c.state.preSelection
+                    : c.calcInitialState().preSelection,
                 lastPreSelectChange: xn
               },
               function() {
                 e ||
-                  l.setState(
+                  c.setState(
                     function(e) {
                       return { focused: !!t && e.focused };
                     },
                     function() {
-                      !t && l.setBlur(), l.setState({ inputValue: null });
+                      !t && c.setBlur(), c.setState({ inputValue: null });
                     }
                   );
               }
             );
           }),
-          (l.inputOk = function() {
-            return m(l.state.preSelection);
+          (c.inputOk = function() {
+            return m(c.state.preSelection);
           }),
-          (l.isCalendarOpen = function() {
-            return void 0 === l.props.open
-              ? l.state.open && !l.props.disabled && !l.props.readOnly
-              : l.props.open;
+          (c.isCalendarOpen = function() {
+            return void 0 === c.props.open
+              ? c.state.open && !c.props.disabled && !c.props.readOnly
+              : c.props.open;
           }),
-          (l.handleFocus = function(e) {
-            l.state.preventFocus ||
-              (l.props.onFocus(e),
-              l.props.preventOpenOnFocus || l.props.readOnly || l.setOpen(!0)),
-              l.setState({ focused: !0 });
+          (c.handleFocus = function(e) {
+            c.state.preventFocus ||
+              (c.props.onFocus(e),
+              c.props.preventOpenOnFocus || c.props.readOnly || c.setOpen(!0)),
+              c.setState({ focused: !0 });
           }),
-          (l.cancelFocusInput = function() {
-            clearTimeout(l.inputFocusTimeout), (l.inputFocusTimeout = null);
+          (c.cancelFocusInput = function() {
+            clearTimeout(c.inputFocusTimeout), (c.inputFocusTimeout = null);
           }),
-          (l.deferFocusInput = function() {
-            l.cancelFocusInput(),
-              (l.inputFocusTimeout = setTimeout(function() {
-                return l.setFocus();
+          (c.deferFocusInput = function() {
+            c.cancelFocusInput(),
+              (c.inputFocusTimeout = setTimeout(function() {
+                return c.setFocus();
               }, 1));
           }),
-          (l.handleDropdownFocus = function() {
-            l.cancelFocusInput();
+          (c.handleDropdownFocus = function() {
+            c.cancelFocusInput();
           }),
-          (l.handleBlur = function(e) {
-            l.state.open && !l.props.withPortal
-              ? l.deferFocusInput()
-              : l.props.onBlur(e),
-              l.setState({ focused: !1 });
+          (c.handleBlur = function(e) {
+            c.state.open && !c.props.withPortal
+              ? c.deferFocusInput()
+              : c.props.onBlur(e),
+              c.setState({ focused: !1 });
           }),
-          (l.handleCalendarClickOutside = function(e) {
-            l.props.inline || l.setOpen(!1),
-              l.props.onClickOutside(e),
-              l.props.withPortal && e.preventDefault();
+          (c.handleCalendarClickOutside = function(e) {
+            c.props.inline || c.setOpen(!1),
+              c.props.onClickOutside(e),
+              c.props.withPortal && e.preventDefault();
           }),
-          (l.handleChange = function() {
+          (c.handleChange = function() {
             for (var e = arguments.length, t = Array(e), n = 0; n < e; n++)
               t[n] = arguments[n];
             var r = t[0];
             if (
-              !l.props.onChangeRaw ||
-              (l.props.onChangeRaw.apply(l, t),
+              !c.props.onChangeRaw ||
+              (c.props.onChangeRaw.apply(c, t),
               "function" == typeof r.isDefaultPrevented &&
                 !r.isDefaultPrevented())
             ) {
-              l.setState({
+              c.setState({
                 inputValue: r.target.value,
                 lastPreSelectChange: Sn
               });
@@ -4968,9 +4968,9 @@
                 i,
                 s,
                 u = ((a = r.target.value),
-                (o = l.props.dateFormat),
+                (o = c.props.dateFormat),
                 (i = null),
-                (s = Xt(l.props.locale)),
+                (s = Xt(c.props.locale)),
                 Array.isArray(o)
                   ? (o.forEach(function(e) {
                       var t = Mt(a, e, new Date(), s);
@@ -4979,33 +4979,33 @@
                     i)
                   : (Yt((i = Mt(a, o, new Date(), s))) || (i = new Date(a)),
                     Yt(i) ? i : null));
-              (!u && r.target.value) || l.setSelected(u, r, !0);
+              (!u && r.target.value) || c.setSelected(u, r, !0);
             }
           }),
-          (l.handleSelect = function(e, t, n) {
-            l.setState({ preventFocus: !0 }, function() {
+          (c.handleSelect = function(e, t, n) {
+            c.setState({ preventFocus: !0 }, function() {
               return (
-                (l.preventFocusTimeout = setTimeout(function() {
-                  return l.setState({ preventFocus: !1 });
+                (c.preventFocusTimeout = setTimeout(function() {
+                  return c.setState({ preventFocus: !1 });
                 }, 50)),
-                l.preventFocusTimeout
+                c.preventFocusTimeout
               );
             }),
-              l.setSelected(e, t, void 0, n),
-              !l.props.shouldCloseOnSelect || l.props.showTimeSelect
-                ? l.setPreSelection(e)
-                : l.props.inline || l.setOpen(!1);
+              c.setSelected(e, t, void 0, n),
+              !c.props.shouldCloseOnSelect || c.props.showTimeSelect
+                ? c.setPreSelection(e)
+                : c.props.inline || c.setOpen(!1);
           }),
-          (l.setSelected = function(e, t, n, r) {
+          (c.setSelected = function(e, t, n, r) {
             var a = e;
-            if (null !== a && At(a, l.props))
-              Gt(a, l.props) &&
-                (l.props.onChange(e, t), l.props.onSelect(a, t));
+            if (null !== a && At(a, c.props))
+              Gt(a, c.props) &&
+                (c.props.onChange(e, t), c.props.onSelect(a, t));
             else {
-              if (!Bt(l.props.selected, a) || l.props.allowSameDay) {
+              if (!Bt(c.props.selected, a) || c.props.allowSameDay) {
                 if (null !== a) {
-                  if (l.props.selected) {
-                    var o = l.props.selected;
+                  if (c.props.selected) {
+                    var o = c.props.selected;
                     n && (o = Pt(a)),
                       (a = Ft(a, {
                         hour: ge(o),
@@ -5021,54 +5021,54 @@
                         })(o)
                       }));
                   }
-                  l.props.inline || l.setState({ preSelection: a }),
-                    l.props.inline &&
-                      1 < l.props.monthsShown &&
-                      !l.props.inlineFocusSelectedMonth &&
-                      l.setState({ monthSelectedIn: r });
+                  c.props.inline || c.setState({ preSelection: a }),
+                    c.props.inline &&
+                      1 < c.props.monthsShown &&
+                      !c.props.inlineFocusSelectedMonth &&
+                      c.setState({ monthSelectedIn: r });
                 }
-                l.props.onChange(a, t);
+                c.props.onChange(a, t);
               }
-              l.props.onSelect(a, t), n || l.setState({ inputValue: null });
+              c.props.onSelect(a, t), n || c.setState({ inputValue: null });
             }
           }),
-          (l.setPreSelection = function(e) {
-            (!(void 0 !== l.props.minDate && void 0 !== l.props.maxDate) ||
+          (c.setPreSelection = function(e) {
+            (!(void 0 !== c.props.minDate && void 0 !== c.props.maxDate) ||
               !e ||
-              jt(e, l.props.minDate, l.props.maxDate)) &&
-              l.setState({ preSelection: e });
+              jt(e, c.props.minDate, c.props.maxDate)) &&
+              c.setState({ preSelection: e });
           }),
-          (l.handleTimeChange = function(e) {
+          (c.handleTimeChange = function(e) {
             var t = Ft(
-              l.props.selected ? l.props.selected : l.getPreSelection(),
+              c.props.selected ? c.props.selected : c.getPreSelection(),
               { hour: ge(e), minute: me(e) }
             );
-            l.setState({ preSelection: t }),
-              l.props.onChange(t),
-              l.props.shouldCloseOnSelect && l.setOpen(!1),
-              l.setState({ inputValue: null });
+            c.setState({ preSelection: t }),
+              c.props.onChange(t),
+              c.props.shouldCloseOnSelect && c.setOpen(!1),
+              c.setState({ inputValue: null });
           }),
-          (l.onInputClick = function() {
-            l.props.disabled || l.props.readOnly || l.setOpen(!0),
-              l.props.onInputClick();
+          (c.onInputClick = function() {
+            c.props.disabled || c.props.readOnly || c.setOpen(!0),
+              c.props.onInputClick();
           }),
-          (l.onInputKeyDown = function(e) {
-            l.props.onKeyDown(e);
+          (c.onInputKeyDown = function(e) {
+            c.props.onKeyDown(e);
             var t = e.key;
-            if (l.state.open || l.props.inline || l.props.preventOpenOnFocus) {
-              var n = Pt(l.state.preSelection);
+            if (c.state.open || c.props.inline || c.props.preventOpenOnFocus) {
+              var n = Pt(c.state.preSelection);
               if ("Enter" === t)
                 e.preventDefault(),
-                  l.inputOk() && l.state.lastPreSelectChange === xn
-                    ? (l.handleSelect(n, e),
-                      !l.props.shouldCloseOnSelect && l.setPreSelection(n))
-                    : l.setOpen(!1);
+                  c.inputOk() && c.state.lastPreSelectChange === xn
+                    ? (c.handleSelect(n, e),
+                      !c.props.shouldCloseOnSelect && c.setPreSelection(n))
+                    : c.setOpen(!1);
               else if ("Escape" === t)
                 e.preventDefault(),
-                  l.setOpen(!1),
-                  l.inputOk() || l.props.onInputError({ code: 1, msg: Tn });
-              else if ("Tab" === t) l.setOpen(!1, !0);
-              else if (!l.props.disabledKeyboardNavigation) {
+                  c.setOpen(!1),
+                  c.inputOk() || c.props.onInputError({ code: 1, msg: Tn });
+              else if ("Tab" === t) c.setOpen(!1, !0);
+              else if (!c.props.disabledKeyboardNavigation) {
                 var r = void 0;
                 switch (t) {
                   case "ArrowLeft":
@@ -5121,173 +5121,170 @@
                 }
                 if (!r)
                   return void (
-                    l.props.onInputError &&
-                    l.props.onInputError({ code: 1, msg: Tn })
+                    c.props.onInputError &&
+                    c.props.onInputError({ code: 1, msg: Tn })
                   );
                 e.preventDefault(),
-                  l.setState({ lastPreSelectChange: xn }),
-                  l.props.adjustDateOnChange && l.setSelected(r),
-                  l.setPreSelection(r);
+                  c.setState({ lastPreSelectChange: xn }),
+                  c.props.adjustDateOnChange && c.setSelected(r),
+                  c.setPreSelection(r);
               }
-            } else ("ArrowDown" !== t && "ArrowUp" !== t) || l.onInputClick();
+            } else ("ArrowDown" !== t && "ArrowUp" !== t) || c.onInputClick();
           }),
-          (l.onClearClick = function(e) {
+          (c.onClearClick = function(e) {
             e && e.preventDefault && e.preventDefault(),
-              l.props.onChange(null, e),
-              l.setState({ inputValue: null });
+              c.props.onChange(null, e),
+              c.setState({ inputValue: null });
           }),
-          (l.clear = function() {
-            l.onClearClick();
+          (c.clear = function() {
+            c.onClearClick();
           }),
-          (l.renderCalendar = function() {
-            return l.props.inline || l.isCalendarOpen()
+          (c.renderCalendar = function() {
+            return c.props.inline || c.isCalendarOpen()
               ? h.createElement(
                   kn,
                   {
                     ref: function(e) {
-                      l.calendar = e;
+                      c.calendar = e;
                     },
-                    locale: l.props.locale,
-                    adjustDateOnChange: l.props.adjustDateOnChange,
-                    setOpen: l.setOpen,
-                    shouldCloseOnSelect: l.props.shouldCloseOnSelect,
-                    dateFormat: l.props.dateFormatCalendar,
-                    useWeekdaysShort: l.props.useWeekdaysShort,
-                    formatWeekDay: l.props.formatWeekDay,
-                    dropdownMode: l.props.dropdownMode,
-                    selected: l.props.selected,
-                    preSelection: l.state.preSelection,
-                    onSelect: l.handleSelect,
-                    onWeekSelect: l.props.onWeekSelect,
-                    openToDate: l.props.openToDate,
-                    minDate: l.props.minDate,
-                    maxDate: l.props.maxDate,
-                    selectsStart: l.props.selectsStart,
-                    selectsEnd: l.props.selectsEnd,
-                    startDate: l.props.startDate,
-                    endDate: l.props.endDate,
-                    excludeDates: l.props.excludeDates,
-                    filterDate: l.props.filterDate,
-                    onClickOutside: l.handleCalendarClickOutside,
-                    formatWeekNumber: l.props.formatWeekNumber,
-                    highlightDates: l.state.highlightDates,
-                    includeDates: l.props.includeDates,
-                    includeTimes: l.props.includeTimes,
-                    injectTimes: l.props.injectTimes,
-                    inline: l.props.inline,
-                    peekNextMonth: l.props.peekNextMonth,
-                    showMonthDropdown: l.props.showMonthDropdown,
-                    useShortMonthInDropdown: l.props.useShortMonthInDropdown,
-                    showMonthYearDropdown: l.props.showMonthYearDropdown,
-                    showWeekNumbers: l.props.showWeekNumbers,
-                    showYearDropdown: l.props.showYearDropdown,
-                    withPortal: l.props.withPortal,
-                    forceShowMonthNavigation: l.props.forceShowMonthNavigation,
+                    locale: c.props.locale,
+                    adjustDateOnChange: c.props.adjustDateOnChange,
+                    setOpen: c.setOpen,
+                    shouldCloseOnSelect: c.props.shouldCloseOnSelect,
+                    dateFormat: c.props.dateFormatCalendar,
+                    useWeekdaysShort: c.props.useWeekdaysShort,
+                    formatWeekDay: c.props.formatWeekDay,
+                    dropdownMode: c.props.dropdownMode,
+                    selected: c.props.selected,
+                    preSelection: c.state.preSelection,
+                    onSelect: c.handleSelect,
+                    onWeekSelect: c.props.onWeekSelect,
+                    openToDate: c.props.openToDate,
+                    minDate: c.props.minDate,
+                    maxDate: c.props.maxDate,
+                    selectsStart: c.props.selectsStart,
+                    selectsEnd: c.props.selectsEnd,
+                    startDate: c.props.startDate,
+                    endDate: c.props.endDate,
+                    excludeDates: c.props.excludeDates,
+                    filterDate: c.props.filterDate,
+                    onClickOutside: c.handleCalendarClickOutside,
+                    formatWeekNumber: c.props.formatWeekNumber,
+                    highlightDates: c.state.highlightDates,
+                    includeDates: c.props.includeDates,
+                    includeTimes: c.props.includeTimes,
+                    injectTimes: c.props.injectTimes,
+                    inline: c.props.inline,
+                    peekNextMonth: c.props.peekNextMonth,
+                    showMonthDropdown: c.props.showMonthDropdown,
+                    useShortMonthInDropdown: c.props.useShortMonthInDropdown,
+                    showMonthYearDropdown: c.props.showMonthYearDropdown,
+                    showWeekNumbers: c.props.showWeekNumbers,
+                    showYearDropdown: c.props.showYearDropdown,
+                    withPortal: c.props.withPortal,
+                    forceShowMonthNavigation: c.props.forceShowMonthNavigation,
                     showDisabledMonthNavigation:
-                      l.props.showDisabledMonthNavigation,
-                    scrollableYearDropdown: l.props.scrollableYearDropdown,
+                      c.props.showDisabledMonthNavigation,
+                    scrollableYearDropdown: c.props.scrollableYearDropdown,
                     scrollableMonthYearDropdown:
-                      l.props.scrollableMonthYearDropdown,
-                    todayButton: l.props.todayButton,
-                    weekLabel: l.props.weekLabel,
+                      c.props.scrollableMonthYearDropdown,
+                    todayButton: c.props.todayButton,
+                    weekLabel: c.props.weekLabel,
                     inputBoxClassName: Cn,
-                    fixedHeight: l.props.fixedHeight,
-                    monthsShown: l.props.monthsShown,
-                    monthSelectedIn: l.state.monthSelectedIn,
-                    onDropdownFocus: l.handleDropdownFocus,
-                    onMonthChange: l.props.onMonthChange,
-                    onYearChange: l.props.onYearChange,
-                    dayClassName: l.props.dayClassName,
-                    showTimeSelect: l.props.showTimeSelect,
-                    showTimeSelectOnly: l.props.showTimeSelectOnly,
-                    onTimeChange: l.handleTimeChange,
-                    timeFormat: l.props.timeFormat,
-                    timeIntervals: l.props.timeIntervals,
-                    minTime: l.props.minTime,
-                    maxTime: l.props.maxTime,
-                    excludeTimes: l.props.excludeTimes,
-                    timeCaption: l.props.timeCaption,
-                    className: l.props.calendarClassName,
-                    container: l.props.calendarContainer,
-                    yearDropdownItemNumber: l.props.yearDropdownItemNumber,
-                    previousMonthButtonLabel: l.props.previousMonthButtonLabel,
-                    nextMonthButtonLabel: l.props.nextMonthButtonLabel,
+                    fixedHeight: c.props.fixedHeight,
+                    monthsShown: c.props.monthsShown,
+                    monthSelectedIn: c.state.monthSelectedIn,
+                    onDropdownFocus: c.handleDropdownFocus,
+                    onMonthChange: c.props.onMonthChange,
+                    onYearChange: c.props.onYearChange,
+                    dayClassName: c.props.dayClassName,
+                    showTimeSelect: c.props.showTimeSelect,
+                    showTimeSelectOnly: c.props.showTimeSelectOnly,
+                    onTimeChange: c.handleTimeChange,
+                    timeFormat: c.props.timeFormat,
+                    timeIntervals: c.props.timeIntervals,
+                    minTime: c.props.minTime,
+                    maxTime: c.props.maxTime,
+                    excludeTimes: c.props.excludeTimes,
+                    timeCaption: c.props.timeCaption,
+                    className: c.props.calendarClassName,
+                    container: c.props.calendarContainer,
+                    yearDropdownItemNumber: c.props.yearDropdownItemNumber,
+                    previousMonthButtonLabel: c.props.previousMonthButtonLabel,
+                    nextMonthButtonLabel: c.props.nextMonthButtonLabel,
                     disabledKeyboardNavigation:
-                      l.props.disabledKeyboardNavigation,
-                    renderCustomHeader: l.props.renderCustomHeader,
-                    popperProps: l.props.popperProps,
-                    renderDayContents: l.props.renderDayContents
+                      c.props.disabledKeyboardNavigation,
+                    renderCustomHeader: c.props.renderCustomHeader,
+                    popperProps: c.props.popperProps,
+                    renderDayContents: c.props.renderDayContents
                   },
-                  l.props.children
+                  c.props.children
                 )
               : null;
           }),
-          (l.renderDateInput = function() {
+          (c.renderDateInput = function() {
             var e,
               t,
               n,
               r,
               a,
               o,
-              i = p(l.props.className, (((e = {})[Cn] = l.state), e)),
-              s =
-                l.props.customInput ||
-                h.createElement("input", {
-                  type: "text",
-                  onKeyPress: function(e) {
-                    e.preventDefault();
-                  },
-                  disabled: !0
-                }),
-              u = l.props.customInputRef || "ref",
-              c =
-                "string" == typeof l.props.value
-                  ? l.props.value
-                  : "string" == typeof l.state.inputValue
-                  ? l.state.inputValue
-                  : ((a = (r = l.props).dateFormat),
+              i = l(c.props.className, (((e = {})[Cn] = c.state), e)),
+              s = h.createElement("input", {
+                type: "text",
+                onKeyPress: function(e) {
+                  e.preventDefault();
+                },
+                disabled: !0
+              }),
+              u =
+                "string" == typeof c.props.value
+                  ? c.props.value
+                  : "string" == typeof c.state.inputValue
+                  ? c.state.inputValue
+                  : ((a = (r = c.props).dateFormat),
                     (o = r.locale),
-                    ((n = l.props.selected) &&
+                    ((n = c.props.selected) &&
                       Ut(n, Array.isArray(a) ? a[0] : a, o)) ||
                       "");
             return h.cloneElement(
               s,
-              (((t = {})[u] = function(e) {
-                l.input = e;
+              (((t = {}).ref = function(e) {
+                c.input = e;
               }),
-              (t.value = c),
-              (t.onBlur = l.handleBlur),
-              (t.onChange = l.handleChange),
-              (t.onClick = l.onInputClick),
-              (t.onFocus = l.handleFocus),
-              (t.onKeyDown = l.onInputKeyDown),
-              (t.id = l.props.id),
-              (t.name = l.props.name),
-              (t.autoFocus = l.props.autoFocus),
-              (t.placeholder = l.props.placeholderText),
-              (t.disabled = l.props.disabled),
-              (t.autoComplete = l.props.autoComplete),
+              (t.value = u),
+              (t.onBlur = c.handleBlur),
+              (t.onChange = c.handleChange),
+              (t.onClick = c.onInputClick),
+              (t.onFocus = c.handleFocus),
+              (t.onKeyDown = c.onInputKeyDown),
+              (t.id = c.props.id),
+              (t.name = c.props.name),
+              (t.autoFocus = c.props.autoFocus),
+              (t.placeholder = c.props.placeholderText),
+              (t.disabled = c.props.disabled),
+              (t.autoComplete = c.props.autoComplete),
               (t.className = i),
-              (t.title = l.props.title),
-              (t.readOnly = l.props.readOnly),
-              (t.required = l.props.required),
-              (t.tabIndex = l.props.tabIndex),
+              (t.title = c.props.title),
+              (t.readOnly = c.props.readOnly),
+              (t.required = c.props.required),
+              (t.tabIndex = c.props.tabIndex),
               t)
             );
           }),
-          (l.renderClearButton = function() {
-            return l.props.isClearable && null != l.props.selected
+          (c.renderClearButton = function() {
+            return c.props.isClearable && null != c.props.selected
               ? h.createElement("button", {
                   type: "button",
                   className: "react-datepicker__close-icon",
-                  onClick: l.onClearClick,
-                  title: l.props.clearButtonTitle,
+                  onClick: c.onClearClick,
+                  title: c.props.clearButtonTitle,
                   tabIndex: -1
                 })
               : null;
           }),
-          (l.state = l.calcInitialState()),
-          l
+          (c.state = c.calcInitialState()),
+          c
         );
       }
       return (

@@ -681,7 +681,7 @@ export default class DatePicker extends React.Component {
       [inputBoxClassName]: this.state
     });
 
-    const customInput = this.props.customInput || (
+    const customInput = (
       <input
         type="text"
         onKeyPress={event => {
@@ -690,7 +690,7 @@ export default class DatePicker extends React.Component {
         disabled
       />
     );
-    const customInputRef = this.props.customInputRef || "ref";
+    const customInputRef = "ref";
     const inputValue =
       typeof this.props.value === "string"
         ? this.props.value

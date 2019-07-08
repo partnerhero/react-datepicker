@@ -43763,16 +43763,14 @@
               _classnames)
             );
 
-            var customInput =
-              _this.props.customInput ||
-              _react2.default.createElement("input", {
-                type: "text",
-                onKeyPress: function onKeyPress(event) {
-                  event.preventDefault();
-                },
-                disabled: true
-              });
-            var customInputRef = _this.props.customInputRef || "ref";
+            var customInput = _react2.default.createElement("input", {
+              type: "text",
+              onKeyPress: function onKeyPress(event) {
+                event.preventDefault();
+              },
+              disabled: true
+            });
+            var customInputRef = "ref";
             var inputValue =
               typeof _this.props.value === "string"
                 ? _this.props.value
